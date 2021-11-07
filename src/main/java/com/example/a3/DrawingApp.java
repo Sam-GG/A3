@@ -12,6 +12,7 @@ public class DrawingApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         VBox root = new VBox();
+
         Scene scene = new Scene(root);
         stage.setTitle("Hello!");
         stage.setScene(scene);
