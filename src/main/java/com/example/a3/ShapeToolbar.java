@@ -22,7 +22,8 @@ public class ShapeToolbar extends VBox {
 
         Button line = new Button("Line");
         Line l = new Line(); l.setScaleY(1); l.setScaleX(20); l.setRotate(45); line.setGraphic(l);
-        this.setSpacing(5);
+
         this.getChildren().addAll(rect, square, circle, oval, line);
+        this.getStylesheets().add("shapeToolbarStyle.css");
     }
 }

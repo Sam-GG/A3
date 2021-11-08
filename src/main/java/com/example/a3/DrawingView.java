@@ -6,10 +6,10 @@ import javafx.scene.layout.Pane;
 public class DrawingView extends Pane {
     public DrawingView(){
         Canvas canvas = new Canvas();
-        canvas.minWidth(350);
-        canvas.minHeight(200);
-        this.setMinWidth(350);
-        this.setMinHeight(200);
+        canvas.minWidth(500);
+        canvas.minHeight(500);
+        this.setMinWidth(500);
+        this.setMinHeight(500);
         this.getChildren().add(canvas);
     }
 }

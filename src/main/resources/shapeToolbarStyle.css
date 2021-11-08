@@ -1,0 +1,5 @@
+.button{
+    -fx-content-display: top;
+    -fx-min-width: 75;
+    -fx-min-height: 104;
+}

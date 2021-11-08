@@ -13,6 +13,7 @@ public class DrawingApp extends Application {
     public void start(Stage stage) throws IOException {
         MainUI mainUI = new MainUI(new ShapeToolbar(), new ColourToolbar(), new DrawingView());
         Scene scene = new Scene(mainUI);
+        scene.getStylesheets().add("style.css");
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

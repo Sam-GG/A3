@@ -13,7 +13,8 @@ public class ColourToolbar extends VBox {
         Button coral = new Button("Coral");
         Button fuchsia = new Button("Fuchsia");
         Button peru = new Button("Peru");
-        this.setSpacing(5);
+
         this.getChildren().addAll(aqua, violet, green, gold, orange, coral, fuchsia, peru);
+        this.getStylesheets().add("colorToolbarStyle.css");
     }
 }
