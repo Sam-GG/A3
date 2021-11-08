@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9868f7cd-52d7-4142-b4b4-46abec55e17c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XCircle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XOval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XRectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/A3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/ColourToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/ColourToolbar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XCircle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XOval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XSquare.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +110,7 @@
       <workItem from="1636327398319" duration="610000" />
       <workItem from="1636330860228" duration="11189000" />
       <workItem from="1636347072779" duration="151000" />
-      <workItem from="1636394495816" duration="861000" />
+      <workItem from="1636394495816" duration="4821000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -137,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636340696201</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="basic construction of Xshape and shape model classes">
+      <created>1636395420823</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636395420823</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +150,7 @@
     <MESSAGE value="addition of other basic view classes and MainUI constructor" />
     <MESSAGE value="graphics added to shape toolbar, empty stylesheet added" />
     <MESSAGE value="addition of toolbar class-specific style sheets and some button configuring" />
-    <option name="LAST_COMMIT_MESSAGE" value="addition of toolbar class-specific style sheets and some button configuring" />
+    <MESSAGE value="basic construction of Xshape and shape model classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic construction of Xshape and shape model classes" />
   </component>
 </project>
