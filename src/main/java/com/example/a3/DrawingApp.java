@@ -11,9 +11,8 @@ import java.io.IOException;
 public class DrawingApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        VBox root = new VBox();
-
-        Scene scene = new Scene(root);
+        MainUI mainUI = new MainUI(new ShapeToolbar(), new ColourToolbar(), new DrawingView());
+        Scene scene = new Scene(mainUI);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
