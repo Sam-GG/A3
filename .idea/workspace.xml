@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9868f7cd-52d7-4142-b4b4-46abec55e17c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/shapeToolbarStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XOval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XRectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/A3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/ColourToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/ColourToolbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/ShapeToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/ShapeToolbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/a3/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/colorToolbarStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +33,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -52,12 +64,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/AbstractDemo/AbstractDemo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -100,7 +112,9 @@
       <workItem from="1636258204089" duration="2155000" />
       <workItem from="1636323471188" duration="2505000" />
       <workItem from="1636327398319" duration="610000" />
-      <workItem from="1636330860228" duration="6539000" />
+      <workItem from="1636330860228" duration="11189000" />
+      <workItem from="1636347072779" duration="151000" />
+      <workItem from="1636394495816" duration="861000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -116,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636336767565</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="addition of toolbar class-specific style sheets and some button configuring">
+      <created>1636340696201</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636340696201</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="addition of other basic view classes and MainUI constructor" />
     <MESSAGE value="graphics added to shape toolbar, empty stylesheet added" />
-    <option name="LAST_COMMIT_MESSAGE" value="graphics added to shape toolbar, empty stylesheet added" />
+    <MESSAGE value="addition of toolbar class-specific style sheets and some button configuring" />
+    <option name="LAST_COMMIT_MESSAGE" value="addition of toolbar class-specific style sheets and some button configuring" />
   </component>
 </project>
