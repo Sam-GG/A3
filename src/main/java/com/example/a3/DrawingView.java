@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-public class DrawingView extends Pane {
+public class DrawingView extends StackPane {
     Canvas myCanvas;
     GraphicsContext gc;
 
@@ -18,11 +18,13 @@ public class DrawingView extends Pane {
     }
 
     public void draw(){
+        //Setting up canvas
         gc.setFill(Color.WHITESMOKE);
         gc.fillRect(gc.getCanvas().getLayoutX(),
                 gc.getCanvas().getLayoutY(),
                 gc.getCanvas().getWidth(),
                 gc.getCanvas().getHeight());
+
         XCircle circ = new XCircle(Color.AQUA, 100, 250, 250);
         drawCircle(circ);
     }
@@ -44,5 +46,10 @@ public class DrawingView extends Pane {
     private void drawRect(XRectangle rect) {
         gc.setFill(rect.getColor());
         gc.fillOval(rect.x_coord, rect.y_coord, rect.getSize(), rect.getHeight());
+    }
+
+    private void drawLine(XLine line) {
+        gc.setFill(line.getColor());
+        gc.fillRect(line.x_coord, line.y_coord, line.getSize(), 3);
     }
 }
