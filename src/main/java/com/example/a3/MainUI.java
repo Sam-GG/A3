@@ -1,9 +1,11 @@
 package com.example.a3;
 
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.BorderPane;
 
-public class MainUI extends HBox {
+public class MainUI extends BorderPane {
     public MainUI(ShapeToolbar shapeBar, ColourToolbar colorBar, DrawingView drawView){
-        this.getChildren().addAll(shapeBar, drawView, colorBar);
+        this.setLeft(shapeBar);
+        this.setCenter(drawView);
+        this.setRight(colorBar);
     }
 }

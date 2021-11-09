@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9868f7cd-52d7-4142-b4b4-46abec55e17c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModelSubscriber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/InteractionModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/InteractionModelSubscriber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/MainUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/MainUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +65,9 @@
     <property name="settings.editor.selected.configurable" value="inlay.hints" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.a3" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sam\School\CMPT 381\A3\A3\src\main\resources" />
     </key>
@@ -107,7 +110,8 @@
       <workItem from="1636327398319" duration="610000" />
       <workItem from="1636330860228" duration="11189000" />
       <workItem from="1636347072779" duration="151000" />
-      <workItem from="1636394495816" duration="5973000" />
+      <workItem from="1636394495816" duration="6638000" />
+      <workItem from="1636429074871" duration="781000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -144,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636401824785</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="implmentation of DrawingModel class as well as its subscriber interface">
+      <created>1636402958210</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636402958210</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +167,7 @@
     <MESSAGE value="addition of toolbar class-specific style sheets and some button configuring" />
     <MESSAGE value="basic construction of Xshape and shape model classes" />
     <MESSAGE value="drawShape function implemented in DrawingView, alongside necessary transformations to shape model classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="drawShape function implemented in DrawingView, alongside necessary transformations to shape model classes" />
+    <MESSAGE value="implmentation of DrawingModel class as well as its subscriber interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="implmentation of DrawingModel class as well as its subscriber interface" />
   </component>
 </project>
