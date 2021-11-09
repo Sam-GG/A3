@@ -4,11 +4,12 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class DrawingModel {
     private ArrayList<XShape> items;
     private ArrayList<DrawingModelSubscriber> subs;
+    private Color currentColor = Color.AQUA;
+    private XShape currentShape;
 
     public DrawingModel() {
         items = new ArrayList<>();
@@ -50,6 +51,10 @@ public class DrawingModel {
 
     public List<XShape> getItems() {
         return items;
+    }
+
+    public Color getCurrentColor() {
+        return currentColor;
     }
 
 //    public Optional<XShape> getItem(double x, double y) {

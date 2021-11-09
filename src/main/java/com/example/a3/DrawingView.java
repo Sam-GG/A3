@@ -2,19 +2,33 @@ package com.example.a3;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-public class DrawingView extends StackPane {
+public class DrawingView extends StackPane implements DrawingModelSubscriber{
     Canvas myCanvas;
     GraphicsContext gc;
+    DrawingModel model;
+    InteractionModel iModel;
+
+    public void setModel(DrawingModel newModel) {
+        this.model = newModel;
+    }
+
+    public void setInteractionModel(InteractionModel newIModel) {
+        iModel = newIModel;
+        iModel.setViewSize(myCanvas.getWidth(), myCanvas.getHeight());
+    }
+
+    public void setController(DrawingController controller) {
+        myCanvas.setOnMousePressed(controller::handlePressed);
+    }
+
 
     public DrawingView(){
         myCanvas = new Canvas(500, 500);
         gc = myCanvas.getGraphicsContext2D();
         this.getChildren().add(myCanvas);
-        draw();
     }
 
     public void draw(){
@@ -25,8 +39,13 @@ public class DrawingView extends StackPane {
                 gc.getCanvas().getWidth(),
                 gc.getCanvas().getHeight());
 
-        XCircle circ = new XCircle(Color.AQUA, 100, 250, 250);
-        drawCircle(circ);
+        model.getItems().forEach(item -> {
+            switch (item) {
+                case XCircle circle -> this.drawCircle(circle);
+                case XSquare square -> this.drawSquare(square);
+                default -> throw new IllegalStateException("Unexpected value: " + item);
+            }
+        });
     }
     private void drawCircle(XCircle circle) {
         gc.setFill(circle.getColor());
@@ -51,5 +70,9 @@ public class DrawingView extends StackPane {
     private void drawLine(XLine line) {
         gc.setFill(line.getColor());
         gc.fillRect(line.x_coord, line.y_coord, line.getSize(), 3);
+    }
+
+    public void modelChanged() {
+        draw();
     }
 }
