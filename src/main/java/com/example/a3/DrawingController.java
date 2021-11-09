@@ -25,4 +25,8 @@ public class DrawingController {
         model.addSquare(model.getCurrentColor(), 50, (int)event.getX(), (int)event.getY());
     }
 
+    public void setCurrentColor(Color c){
+        model.setCurrentColor(c);
+    }
+
 }

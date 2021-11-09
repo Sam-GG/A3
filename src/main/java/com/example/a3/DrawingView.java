@@ -24,7 +24,6 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
         myCanvas.setOnMousePressed(controller::handlePressed);
     }
 
-
     public DrawingView(){
         myCanvas = new Canvas(500, 500);
         gc = myCanvas.getGraphicsContext2D();
@@ -43,6 +42,9 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
             switch (item) {
                 case XCircle circle -> this.drawCircle(circle);
                 case XSquare square -> this.drawSquare(square);
+                case XRectangle rect -> this.drawRect(rect);
+                case XOval oval -> this.drawOval(oval);
+                case XLine line -> this.drawLine(line);
                 default -> throw new IllegalStateException("Unexpected value: " + item);
             }
         });

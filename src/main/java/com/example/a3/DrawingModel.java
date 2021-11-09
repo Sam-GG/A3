@@ -57,6 +57,9 @@ public class DrawingModel {
         return currentColor;
     }
 
+    public void setCurrentColor(Color c){
+        this.currentColor = c;
+    }
 //    public Optional<XShape> getItem(double x, double y) {
 //        return items.stream().filter(item -> item.contains(x,y)).findFirst();
 //    }

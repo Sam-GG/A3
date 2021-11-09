@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9868f7cd-52d7-4142-b4b4-46abec55e17c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/A3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/ColourToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/ColourToolbar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" afterDir="false" />
@@ -115,7 +113,7 @@
       <workItem from="1636330860228" duration="11189000" />
       <workItem from="1636347072779" duration="151000" />
       <workItem from="1636394495816" duration="6638000" />
-      <workItem from="1636429074871" duration="3950000" />
+      <workItem from="1636429074871" duration="5951000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -166,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636429997689</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implemented connectivity between models and controllers. Basic square painting functional">
+      <created>1636434923785</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636434923785</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +185,7 @@
     <MESSAGE value="drawShape function implemented in DrawingView, alongside necessary transformations to shape model classes" />
     <MESSAGE value="implmentation of DrawingModel class as well as its subscriber interface" />
     <MESSAGE value="IModel and IModelSubscriber. also changed MainUI to extend BorderPane rather than HBox. This allows for resizing to work better" />
-    <option name="LAST_COMMIT_MESSAGE" value="IModel and IModelSubscriber. also changed MainUI to extend BorderPane rather than HBox. This allows for resizing to work better" />
+    <MESSAGE value="Implemented connectivity between models and controllers. Basic square painting functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented connectivity between models and controllers. Basic square painting functional" />
   </component>
 </project>

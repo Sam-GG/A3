@@ -20,8 +20,10 @@ public class DrawingApp extends Application {
         view.setController(controller);
         controller.setModel(model);
         controller.setInteractionModel(iModel);
+        ColourToolbar colorBar = new ColourToolbar();
+        colorBar.setController(controller);
 
-        MainUI mainUI = new MainUI(new ShapeToolbar(), new ColourToolbar(), view);
+        MainUI mainUI = new MainUI(new ShapeToolbar(), colorBar, view);
         Scene scene = new Scene(mainUI);
         scene.getStylesheets().add("style.css");
         stage.setTitle("Hello!");
