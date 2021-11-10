@@ -22,6 +22,7 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
 
     public void setController(DrawingController controller) {
         myCanvas.setOnMousePressed(controller::handlePressed);
+//        myCanvas.setOnMouseDragged(controller::handlePressed);
     }
 
     public DrawingView(){
@@ -66,7 +67,7 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
 
     private void drawRect(XRectangle rect) {
         gc.setFill(rect.getColor());
-        gc.fillOval(rect.x_coord, rect.y_coord, rect.getSize(), rect.getHeight());
+        gc.fillRect(rect.x_coord, rect.y_coord, rect.getSize(), rect.getHeight());
     }
 
     private void drawLine(XLine line) {

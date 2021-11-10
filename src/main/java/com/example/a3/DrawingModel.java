@@ -9,7 +9,7 @@ public class DrawingModel {
     private ArrayList<XShape> items;
     private ArrayList<DrawingModelSubscriber> subs;
     private Color currentColor = Color.AQUA;
-    private XShape currentShape;
+    private String currentShapeType;
 
     public DrawingModel() {
         items = new ArrayList<>();
@@ -24,37 +24,33 @@ public class DrawingModel {
         subs.forEach(sub -> sub.modelChanged());
     }
 
-    public void addCircle(Color color, int size, int x_coord, int y_coord) {
-        items.add(new XCircle(color, size, x_coord, y_coord));
+    public void addCircle(int size, int x_coord, int y_coord) {
+        items.add(new XCircle(currentColor, size, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addSquare(Color color, int size, int x_coord, int y_coord) {
-        items.add(new XSquare(color, size, x_coord, y_coord));
+    public void addSquare(int size, int x_coord, int y_coord) {
+        items.add(new XSquare(currentColor, size, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addRect(Color color, int size, int height, int x_coord, int y_coord) {
-        items.add(new XRectangle(color, size, height, x_coord, y_coord));
+    public void addRect(int size, int height, int x_coord, int y_coord) {
+        items.add(new XRectangle(currentColor, size, height, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addOval(Color color, int size, int height, int x_coord, int y_coord) {
-        items.add(new XOval(color, size, height, x_coord, y_coord));
+    public void addOval(int size, int height, int x_coord, int y_coord) {
+        items.add(new XOval(currentColor, size, height, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addLine(Color color, int size, int x_coord, int y_coord) {
-        items.add(new XLine(color, size, x_coord, y_coord));
+    public void addLine(int size, int x_coord, int y_coord) {
+        items.add(new XLine(currentColor, size, x_coord, y_coord));
         notifySubscribers();
     }
 
     public List<XShape> getItems() {
         return items;
-    }
-
-    public Color getCurrentColor() {
-        return currentColor;
     }
 
     public void setCurrentColor(Color c){

@@ -13,6 +13,7 @@ public class DrawingApp extends Application {
         DrawingView view = new DrawingView();
         DrawingController controller = new DrawingController();
         InteractionModel iModel = new InteractionModel();
+        ShapeToolbar shapeToolbar = new ShapeToolbar();
 
         model.addSubscriber(view);
         view.setModel(model);
@@ -20,10 +21,11 @@ public class DrawingApp extends Application {
         view.setController(controller);
         controller.setModel(model);
         controller.setInteractionModel(iModel);
+        controller.setToggleGroup(shapeToolbar.toggleGroup);
         ColourToolbar colorBar = new ColourToolbar();
         colorBar.setController(controller);
 
-        MainUI mainUI = new MainUI(new ShapeToolbar(), colorBar, view);
+        MainUI mainUI = new MainUI(shapeToolbar, colorBar, view);
         Scene scene = new Scene(mainUI);
         scene.getStylesheets().add("style.css");
         stage.setTitle("Hello!");
