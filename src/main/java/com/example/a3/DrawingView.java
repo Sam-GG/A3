@@ -23,6 +23,7 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
     public void setController(DrawingController controller) {
         myCanvas.setOnMousePressed(controller::handlePressed);
 //        myCanvas.setOnMouseDragged(controller::handlePressed);
+//        myCanvas.setOnMouseDragReleased(controller::handlePressed);
     }
 
     public DrawingView(){
@@ -58,6 +59,19 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
             }
         });
     }
+
+//    double showX1 = 10;
+//    double showY1 = 10;
+//
+//    public void drawResize(double scaleFactor, double x_coord, double y_coord){
+//        scaleFactor+=1;
+//        showX1 *= scaleFactor;
+//        showY1 *= scaleFactor;
+//
+//        gc.setFill(Color.RED);
+//        gc.fillRect(x_coord,y_coord, showX1,showY1);
+//    }
+
     private void drawCircle(XCircle circle) {
         gc.setFill(circle.getColor());
         gc.fillOval(circle.x_coord, circle.y_coord, circle.getSize(), circle.getSize());

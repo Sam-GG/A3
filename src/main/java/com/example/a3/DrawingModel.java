@@ -25,6 +25,7 @@ public class DrawingModel {
     }
 
     public void addCircle(int size, int x_coord, int y_coord) {
+        XCircle circ = new XCircle(currentColor, size, x_coord, y_coord);
         items.add(new XCircle(currentColor, size, x_coord, y_coord));
         notifySubscribers();
     }
@@ -56,6 +57,11 @@ public class DrawingModel {
     public void setCurrentColor(Color c){
         this.currentColor = c;
     }
+
+    public Color getCurrentColor() {
+        return this.currentColor;
+    }
+
 //    public Optional<XShape> getItem(double x, double y) {
 //        return items.stream().filter(item -> item.contains(x,y)).findFirst();
 //    }

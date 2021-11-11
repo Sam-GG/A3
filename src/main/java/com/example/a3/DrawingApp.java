@@ -20,10 +20,12 @@ public class DrawingApp extends Application {
         view.setInteractionModel(iModel);
         view.setController(controller);
         controller.setModel(model);
+        controller.setDrawingView(view);
         controller.setInteractionModel(iModel);
         controller.setToggleGroup(shapeToolbar.toggleGroup);
         ColourToolbar colorBar = new ColourToolbar();
         colorBar.setController(controller);
+        shapeToolbar.setController(controller);
 
         MainUI mainUI = new MainUI(shapeToolbar, colorBar, view);
         Scene scene = new Scene(mainUI);
