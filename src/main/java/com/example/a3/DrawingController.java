@@ -16,6 +16,8 @@ public class DrawingController {
     InteractionModel iModel;
     ToggleGroup toggleGroup;
     DrawingView drawingView;
+    int dragStartX;
+    int dragStartY;
 
     public DrawingController() {
     }
@@ -33,50 +35,49 @@ public class DrawingController {
     }
 
     public void handlePressed(MouseEvent event) {
-
-        try {
-            String selectedShape = toggleGroup.getSelectedToggle().getUserData().toString();
-            switch (selectedShape) {
-//                case "rectangle":
-//                    double initialX = 0;
-//                    if (event.getEventType() == MouseEvent.MOUSE_PRESSED){
-//                        initialX = event.getX();
-//                    }
-//                    if (event.getEventType() == MouseEvent.MOUSE_DRAGGED){
-//                        drawingView.drawResize(Math.abs((event.getX()-initialX/25)), (int) event.getX(), (int) event.getY());
-//                    }
-//                    if (event.getEventType() == MouseEvent.MOUSE_RELEASED){
-//                        model.addRect(25, 20, (int) event.getX(), (int) event.getY());
-//                    }
-//                    break;
-                case "rectangle":
-                    model.addRect(25, 20, (int) event.getX(), (int) event.getY());
-                    break;
-                case "circle":
-                    model.addCircle(25, (int) event.getX(), (int) event.getY());
-                    break;
-                case "square":
-                    model.addSquare(25, (int) event.getX(), (int) event.getY());
-                    break;
-                case "oval":
-                    model.addOval(25, 20, (int) event.getX(), (int) event.getY());
-                    break;
-                case "line":
-                    model.addLine(50, (int) event.getX(), (int) event.getY());
-                    break;
-                default:
-                    System.out.println("Select a shape");
+        if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
+            this.dragStartX = (int)event.getX();
+            this.dragStartY = (int)event.getY();
+            try {
+                String selectedShape = toggleGroup.getSelectedToggle().getUserData().toString();
+                switch (selectedShape) {
+                    case "rectangle":
+                        model.addRect(25, 20, (int) event.getX(), (int) event.getY());
+                        break;
+                    case "circle":
+                        model.addCircle(25, 25, (int) event.getX(), (int) event.getY());
+                        break;
+                    case "square":
+                        model.addSquare(25, 25, (int) event.getX(), (int) event.getY());
+                        break;
+                    case "oval":
+                        model.addOval(25, 20, (int) event.getX(), (int) event.getY());
+                        break;
+                    case "line":
+                        model.addLine(50, 3, (int) event.getX(), (int) event.getY());
+                        break;
+                    default:
+                        System.out.println("Select a shape");
+                }
+            } catch (Exception e) {
+                System.out.println("Shape not selected");
+                System.out.println(e);
             }
-        } catch (Exception e) {
-            System.out.println("Shape not selected");
-            System.out.println(e);
         }
 
     }
 
-//    public void handlePressed(MouseDragEvent event) {
-//        model.addSquare(model.getCurrentColor(), 5, (int)event.getX(), (int)event.getY());
-//    }
+    public void handleDrag(MouseEvent event) {
+        boolean xFlipped = false;
+        boolean yFlipped = false;
+        if ((event.getX() - dragStartX) < 0){
+            xFlipped = true;
+        }
+        if ((event.getY() - dragStartY) < 0){
+            yFlipped = true;
+        }
+        model.setCurrentShapeDrag((int)dragStartX, (int)dragStartY, (int)event.getX(), (int)event.getY(), xFlipped, yFlipped);
+    }
 
     public void setCurrentColor(Color c){
         model.setCurrentColor(c);

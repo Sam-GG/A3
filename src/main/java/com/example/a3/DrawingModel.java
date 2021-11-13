@@ -24,29 +24,28 @@ public class DrawingModel {
         subs.forEach(sub -> sub.modelChanged());
     }
 
-    public void addCircle(int size, int x_coord, int y_coord) {
-        XCircle circ = new XCircle(currentColor, size, x_coord, y_coord);
-        items.add(new XCircle(currentColor, size, x_coord, y_coord));
+    public void addCircle(int width, int height, int x_coord, int y_coord) {
+        items.add(new XCircle(currentColor, width, height, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addSquare(int size, int x_coord, int y_coord) {
-        items.add(new XSquare(currentColor, size, x_coord, y_coord));
+    public void addSquare(int width, int height, int x_coord, int y_coord) {
+        items.add(new XSquare(currentColor, width, height, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addRect(int size, int height, int x_coord, int y_coord) {
-        items.add(new XRectangle(currentColor, size, height, x_coord, y_coord));
+    public void addRect(int width, int height, int x_coord, int y_coord) {
+        items.add(new XRectangle(currentColor, width, height, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addOval(int size, int height, int x_coord, int y_coord) {
-        items.add(new XOval(currentColor, size, height, x_coord, y_coord));
+    public void addOval(int width, int height, int x_coord, int y_coord) {
+        items.add(new XOval(currentColor, width, height, x_coord, y_coord));
         notifySubscribers();
     }
 
-    public void addLine(int size, int x_coord, int y_coord) {
-        items.add(new XLine(currentColor, size, x_coord, y_coord));
+    public void addLine(int width, int height, int x_coord, int y_coord) {
+        items.add(new XLine(currentColor, width, height, x_coord, y_coord));
         notifySubscribers();
     }
 
@@ -60,6 +59,77 @@ public class DrawingModel {
 
     public Color getCurrentColor() {
         return this.currentColor;
+    }
+
+    public void setCurrentShapeDrag(int dragStartX, int dragStartY, int x, int y, boolean xFlipped, boolean yFlipped){
+        int width = Math.abs(x - dragStartX);
+        int height = Math.abs(y - dragStartY);
+        switch (items.get(items.size()-1)) {
+            case XRectangle rect -> {rect.setHeight(height);
+                rect.setWidth(width);
+                if (xFlipped){
+                    rect.x_coord = (int)x;
+                }
+                if(yFlipped){
+                    rect.y_coord = (int)y;
+                }
+            }
+            case XOval oval -> {oval.setHeight(height);
+                oval.setWidth(width);
+                if (xFlipped){
+                    oval.x_coord = (int)x;
+                }
+                if(yFlipped){
+                    oval.y_coord = (int)y;
+                }}
+            case XCircle circle -> {
+                int min = Math.min(height, width);
+                circle.setWidth(min);
+                circle.setHeight(min);
+                if (min == height){
+                    if(yFlipped){
+                        circle.y_coord = dragStartY-height;
+                    }
+                    if (xFlipped){
+                        circle.x_coord = dragStartX-height;
+                    }
+                }else if(min == width){
+                    if(yFlipped){
+                        circle.y_coord = dragStartY-width;
+                    }
+                    if (xFlipped){
+                        circle.x_coord = dragStartX-width;
+                    }
+                }
+            }
+            case XSquare square -> {
+                int min = Math.min(height, width);
+                square.setWidth(min);
+                square.setHeight(min);
+                if (min == height){
+                    if(yFlipped){
+                        square.y_coord = dragStartY-height;
+                    }
+                    if (xFlipped){
+                        square.x_coord = dragStartX-height;
+                    }
+                }else if(min == width){
+                    if(yFlipped){
+                        square.y_coord = dragStartY-width;
+                    }
+                    if (xFlipped){
+                        square.x_coord = dragStartX-width;
+                    }
+                }
+            }
+            case XLine line -> {
+                line.setWidth(x);
+                line.setHeight(y);
+            }
+
+            default -> throw new IllegalStateException("Unexpected value: " + items.get(items.size() - 1));
+        }
+        notifySubscribers();
     }
 
 //    public Optional<XShape> getItem(double x, double y) {

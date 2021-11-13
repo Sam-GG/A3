@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9868f7cd-52d7-4142-b4b4-46abec55e17c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/MiniDrawingView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/ShapeToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/ShapeToolbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/MainUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/MainUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XCircle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XCircle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XOval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XOval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XRectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XSquare.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,7 +71,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -72,6 +79,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sam\School\CMPT 381\A3\A3\src\main\resources" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.a3" />
     </key>
   </component>
   <component name="RunManager">
@@ -114,7 +124,9 @@
       <workItem from="1636347072779" duration="151000" />
       <workItem from="1636394495816" duration="6638000" />
       <workItem from="1636429074871" duration="5951000" />
-      <workItem from="1636594145816" duration="12243000" />
+      <workItem from="1636594145816" duration="13096000" />
+      <workItem from="1636663297186" duration="16911000" />
+      <workItem from="1636761693273" duration="24133000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -186,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636595460370</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Shape toolbar buttons dynamic color changing">
+      <created>1636609053824</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1636609053824</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +222,7 @@
     <MESSAGE value="Implemented connectivity between models and controllers. Basic square painting functional" />
     <MESSAGE value="Implemented toggleGroup and shape selection capabilties for controller and drawing" />
     <MESSAGE value="Canvas resizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Canvas resizing" />
+    <MESSAGE value="Shape toolbar buttons dynamic color changing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shape toolbar buttons dynamic color changing" />
   </component>
 </project>
