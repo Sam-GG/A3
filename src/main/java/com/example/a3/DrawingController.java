@@ -11,11 +11,14 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
+import java.util.Optional;
+
 public class DrawingController {
     DrawingModel model;
     InteractionModel iModel;
     ToggleGroup toggleGroup;
     DrawingView drawingView;
+    boolean drawingNew = true;
     int dragStartX;
     int dragStartY;
 
@@ -35,9 +38,13 @@ public class DrawingController {
     }
 
     public void handlePressed(MouseEvent event) {
-        if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
-            this.dragStartX = (int)event.getX();
-            this.dragStartY = (int)event.getY();
+        this.dragStartX = (int)event.getX();
+        this.dragStartY = (int)event.getY();
+        if (!model.getItem((int)event.getX(), (int)event.getY()).isEmpty()){
+            model.bringShapeToFront(model.getItem((int)event.getX(), (int)event.getY()).get());
+            this.drawingNew = false;
+        }else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
+            this.drawingNew = true;
             try {
                 String selectedShape = toggleGroup.getSelectedToggle().getUserData().toString();
                 switch (selectedShape) {
@@ -63,20 +70,25 @@ public class DrawingController {
                 System.out.println("Shape not selected");
                 System.out.println(e);
             }
+
         }
 
     }
 
     public void handleDrag(MouseEvent event) {
-        boolean xFlipped = false;
-        boolean yFlipped = false;
-        if ((event.getX() - dragStartX) < 0){
-            xFlipped = true;
+        if (drawingNew) {
+            boolean xFlipped = false;
+            boolean yFlipped = false;
+            if ((event.getX() - dragStartX) < 0) {
+                xFlipped = true;
+            }
+            if ((event.getY() - dragStartY) < 0) {
+                yFlipped = true;
+            }
+            model.setCurrentShapeDrag((int) dragStartX, (int) dragStartY, (int) event.getX(), (int) event.getY(), xFlipped, yFlipped);
+        } else{
+            model.moveShape((int)event.getX(), (int)event.getY());
         }
-        if ((event.getY() - dragStartY) < 0){
-            yFlipped = true;
-        }
-        model.setCurrentShapeDrag((int)dragStartX, (int)dragStartY, (int)event.getX(), (int)event.getY(), xFlipped, yFlipped);
     }
 
     public void setCurrentColor(Color c){

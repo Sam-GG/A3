@@ -2,8 +2,7 @@ package com.example.a3;
 
 import javafx.scene.paint.Color;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class DrawingModel {
     private ArrayList<XShape> items;
@@ -132,7 +131,24 @@ public class DrawingModel {
         notifySubscribers();
     }
 
-//    public Optional<XShape> getItem(double x, double y) {
-//        return items.stream().filter(item -> item.contains(x,y)).findFirst();
-//    }
+    public void moveShape(int x, int y){
+        getSelectedShape().x_coord = x;
+        getSelectedShape().y_coord = y;
+        notifySubscribers();
+    }
+
+    private XShape getSelectedShape(){
+        return items.get(items.size()-1);
+    }
+
+    public Optional<XShape> getItem(int x, int y) {
+        System.out.println(items.stream().filter(item -> item.contains(x,y)).findFirst());
+        return items.stream().filter(item -> item.contains(x,y)).findFirst();
+    }
+
+    public void bringShapeToFront(XShape xShape) {
+        int idx = this.items.indexOf(xShape);
+        Collections.rotate(this.items.subList(idx, items.size()), -1);
+        notifySubscribers();
+    }
 }

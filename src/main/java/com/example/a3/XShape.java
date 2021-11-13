@@ -34,4 +34,15 @@ public class XShape {
     public Color getColor() {
         return this.color;
     }
+    public boolean contains(int x, int y){
+        if (x > x_coord && x < x_coord+width){
+            if (y > y_coord && y < y_coord+height){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
 }
