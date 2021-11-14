@@ -8,7 +8,6 @@ public class DrawingModel {
     private ArrayList<XShape> items;
     private ArrayList<DrawingModelSubscriber> subs;
     private Color currentColor = Color.AQUA;
-    private String currentShapeType;
 
     public DrawingModel() {
         items = new ArrayList<>();
@@ -136,7 +135,7 @@ public class DrawingModel {
         notifySubscribers();
     }
 
-    public void moveShape(int x, int y, int dragStartX, int dragStartY){
+    public void moveShape(int x, int y){
         getSelectedShape().x_coord = x;
         getSelectedShape().y_coord = y;
         notifySubscribers();

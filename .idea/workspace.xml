@@ -10,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/ShapeToolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/ShapeToolbar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +121,7 @@
       <workItem from="1636663297186" duration="16911000" />
       <workItem from="1636761693273" duration="27270000" />
       <workItem from="1636790095519" duration="304000" />
-      <workItem from="1636835384446" duration="17564000" />
+      <workItem from="1636835384446" duration="17901000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636790126257</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Boundary boxes implemented, resizing of any selected shape, resizing and moving are no longer buggy, resize handle, deletion of selected shape">
+      <created>1636867196421</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636867196421</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +241,7 @@
     <MESSAGE value="Shape toolbar buttons dynamic color changing" />
     <MESSAGE value="Proper drag resizing including mirrored views, lines are now drawn with gc.strokeLine and behave as they should" />
     <MESSAGE value="Shapes can now be selected and brought to the front and then moved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shapes can now be selected and brought to the front and then moved" />
+    <MESSAGE value="Boundary boxes implemented, resizing of any selected shape, resizing and moving are no longer buggy, resize handle, deletion of selected shape" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boundary boxes implemented, resizing of any selected shape, resizing and moving are no longer buggy, resize handle, deletion of selected shape" />
   </component>
 </project>

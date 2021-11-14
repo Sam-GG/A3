@@ -4,12 +4,8 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-
-import java.security.Key;
-import java.util.Optional;
 
 public class DrawingController {
     DrawingModel model;
@@ -98,7 +94,7 @@ public class DrawingController {
             }
             model.setCurrentShapeDrag((int) dragStartX, (int) dragStartY, (int) event.getX(), (int) event.getY(), xFlipped, yFlipped);
         } else{
-            model.moveShape((int)event.getX()-offsetX, (int)event.getY()-offsetY, dragStartX, dragStartY);
+            model.moveShape((int)event.getX()-offsetX, (int)event.getY()-offsetY);
         }
     }
 
