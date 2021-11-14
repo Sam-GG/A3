@@ -8,6 +8,7 @@ public class XShape {
     private Color color;
     public int x_coord;
     public int y_coord;
+    public boolean isSelected = false;
 
     public XShape(Color color, int width, int height, int x_coord, int y_coord){
         this.color = color;
@@ -34,6 +35,7 @@ public class XShape {
     public Color getColor() {
         return this.color;
     }
+
     public boolean contains(int x, int y){
         if (x > x_coord && x < x_coord+width){
             if (y > y_coord && y < y_coord+height){

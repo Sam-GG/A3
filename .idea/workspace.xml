@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9868f7cd-52d7-4142-b4b4-46abec55e17c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/DrawingView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a3/XShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,6 +120,8 @@
       <workItem from="1636594145816" duration="13096000" />
       <workItem from="1636663297186" duration="16911000" />
       <workItem from="1636761693273" duration="27270000" />
+      <workItem from="1636790095519" duration="304000" />
+      <workItem from="1636835384446" duration="17564000" />
     </task>
     <task id="LOCAL-00001" summary="addition of other basic view classes and MainUI constructor">
       <created>1636258936540</created>
@@ -203,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636786974795</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Shapes can now be selected and brought to the front and then moved">
+      <created>1636790126257</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1636790126257</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +233,7 @@
     <MESSAGE value="Canvas resizing" />
     <MESSAGE value="Shape toolbar buttons dynamic color changing" />
     <MESSAGE value="Proper drag resizing including mirrored views, lines are now drawn with gc.strokeLine and behave as they should" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proper drag resizing including mirrored views, lines are now drawn with gc.strokeLine and behave as they should" />
+    <MESSAGE value="Shapes can now be selected and brought to the front and then moved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shapes can now be selected and brought to the front and then moved" />
   </component>
 </project>

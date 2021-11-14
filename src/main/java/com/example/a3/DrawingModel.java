@@ -25,26 +25,31 @@ public class DrawingModel {
 
     public void addCircle(int width, int height, int x_coord, int y_coord) {
         items.add(new XCircle(currentColor, width, height, x_coord, y_coord));
+        updateSelected();
         notifySubscribers();
     }
 
     public void addSquare(int width, int height, int x_coord, int y_coord) {
         items.add(new XSquare(currentColor, width, height, x_coord, y_coord));
+        updateSelected();
         notifySubscribers();
     }
 
     public void addRect(int width, int height, int x_coord, int y_coord) {
         items.add(new XRectangle(currentColor, width, height, x_coord, y_coord));
+        updateSelected();
         notifySubscribers();
     }
 
     public void addOval(int width, int height, int x_coord, int y_coord) {
         items.add(new XOval(currentColor, width, height, x_coord, y_coord));
+        updateSelected();
         notifySubscribers();
     }
 
     public void addLine(int width, int height, int x_coord, int y_coord) {
         items.add(new XLine(currentColor, width, height, x_coord, y_coord));
+        updateSelected();
         notifySubscribers();
     }
 
@@ -63,7 +68,7 @@ public class DrawingModel {
     public void setCurrentShapeDrag(int dragStartX, int dragStartY, int x, int y, boolean xFlipped, boolean yFlipped){
         int width = Math.abs(x - dragStartX);
         int height = Math.abs(y - dragStartY);
-        switch (items.get(items.size()-1)) {
+        switch (getSelectedShape()) {
             case XRectangle rect -> {rect.setHeight(height);
                 rect.setWidth(width);
                 if (xFlipped){
@@ -131,24 +136,56 @@ public class DrawingModel {
         notifySubscribers();
     }
 
-    public void moveShape(int x, int y){
+    public void moveShape(int x, int y, int dragStartX, int dragStartY){
         getSelectedShape().x_coord = x;
         getSelectedShape().y_coord = y;
         notifySubscribers();
     }
 
-    private XShape getSelectedShape(){
+    public XShape getSelectedShape(){
         return items.get(items.size()-1);
     }
 
+    public void updateSelected(){
+        items.forEach(item -> item.isSelected = false);
+        getSelectedShape().isSelected = true;
+    }
+
+    public void deselect(){
+        if (getSelectedShape().getWidth() == 1 && getSelectedShape().getHeight() == 1){
+            items.remove(items.remove(items.size()-1));
+        }
+        notifySubscribers();
+    }
+
+    public boolean grabbedResizeHandle(double x, double y){
+        if (!items.isEmpty() && getSelectedShape().isSelected) {
+            int grabAreaX = getSelectedShape().x_coord + getSelectedShape().getWidth();
+            int grabAreaY = getSelectedShape().y_coord + getSelectedShape().getHeight();
+            if ((int)x >= grabAreaX && (int)x < grabAreaX+15){
+                if ((int)y >= grabAreaY && (int)y < grabAreaY+15){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public Optional<XShape> getItem(int x, int y) {
-        System.out.println(items.stream().filter(item -> item.contains(x,y)).findFirst());
         return items.stream().filter(item -> item.contains(x,y)).findFirst();
     }
 
     public void bringShapeToFront(XShape xShape) {
         int idx = this.items.indexOf(xShape);
         Collections.rotate(this.items.subList(idx, items.size()), -1);
+        updateSelected();
         notifySubscribers();
+    }
+
+    public void removeSelectedShape(){
+        if (getSelectedShape().isSelected){
+            items.remove(items.size()-1);
+            notifySubscribers();
+        }
     }
 }

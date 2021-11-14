@@ -33,6 +33,7 @@ public class DrawingApp extends Application {
         ColourToolbar colorBar = new ColourToolbar();
         colorBar.setController(controller);
         shapeToolbar.setController(controller);
+
 //        miniView.setModel(model);
 //        miniView.setInteractionModel(iModel);
 //        miniView.setController(controller);
@@ -42,6 +43,7 @@ public class DrawingApp extends Application {
 
         MainUI mainUI = new MainUI(shapeToolbar, colorBar, view);
         Scene scene = new Scene(mainUI);
+        scene.setOnKeyPressed(controller::handleDelete);
         scene.getStylesheets().add("style.css");
         stage.setTitle("Hello!");
         stage.setScene(scene);

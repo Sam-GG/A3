@@ -1,16 +1,14 @@
 package com.example.a3;
 
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
+import java.security.Key;
 import java.util.Optional;
 
 public class DrawingController {
@@ -19,8 +17,11 @@ public class DrawingController {
     ToggleGroup toggleGroup;
     DrawingView drawingView;
     boolean drawingNew = true;
+    boolean resizing = false;
     int dragStartX;
     int dragStartY;
+    int offsetX;
+    int offsetY;
 
     public DrawingController() {
     }
@@ -40,28 +41,38 @@ public class DrawingController {
     public void handlePressed(MouseEvent event) {
         this.dragStartX = (int)event.getX();
         this.dragStartY = (int)event.getY();
-        if (!model.getItem((int)event.getX(), (int)event.getY()).isEmpty()){
+        if (model.grabbedResizeHandle(event.getX(), event.getY())){
+            System.out.println("grabbed!");
+            dragStartX = model.getSelectedShape().x_coord;
+            dragStartY = model.getSelectedShape().y_coord;
+            resizing = true;
+//            this.drawingNew = false;
+        }else if (!model.getItem((int)event.getX(), (int)event.getY()).isEmpty()){
             model.bringShapeToFront(model.getItem((int)event.getX(), (int)event.getY()).get());
+            offsetX = dragStartX - model.getSelectedShape().x_coord;
+            offsetY = dragStartY - model.getSelectedShape().y_coord;
+            this.resizing = false;
             this.drawingNew = false;
         }else if (event.getEventType() == MouseEvent.MOUSE_PRESSED) {
+            this.resizing = false;
             this.drawingNew = true;
             try {
                 String selectedShape = toggleGroup.getSelectedToggle().getUserData().toString();
                 switch (selectedShape) {
                     case "rectangle":
-                        model.addRect(25, 20, (int) event.getX(), (int) event.getY());
+                        model.addRect(1, 1, (int) event.getX(), (int) event.getY());
                         break;
                     case "circle":
-                        model.addCircle(25, 25, (int) event.getX(), (int) event.getY());
+                        model.addCircle(1, 1, (int) event.getX(), (int) event.getY());
                         break;
                     case "square":
-                        model.addSquare(25, 25, (int) event.getX(), (int) event.getY());
+                        model.addSquare(1, 1, (int) event.getX(), (int) event.getY());
                         break;
                     case "oval":
-                        model.addOval(25, 20, (int) event.getX(), (int) event.getY());
+                        model.addOval(1, 1, (int) event.getX(), (int) event.getY());
                         break;
                     case "line":
-                        model.addLine(50, 3, (int) event.getX(), (int) event.getY());
+                        model.addLine(1, 3, (int) event.getX(), (int) event.getY());
                         break;
                     default:
                         System.out.println("Select a shape");
@@ -76,7 +87,7 @@ public class DrawingController {
     }
 
     public void handleDrag(MouseEvent event) {
-        if (drawingNew) {
+        if (drawingNew || resizing) {
             boolean xFlipped = false;
             boolean yFlipped = false;
             if ((event.getX() - dragStartX) < 0) {
@@ -87,9 +98,10 @@ public class DrawingController {
             }
             model.setCurrentShapeDrag((int) dragStartX, (int) dragStartY, (int) event.getX(), (int) event.getY(), xFlipped, yFlipped);
         } else{
-            model.moveShape((int)event.getX(), (int)event.getY());
+            model.moveShape((int)event.getX()-offsetX, (int)event.getY()-offsetY, dragStartX, dragStartY);
         }
     }
+
 
     public void setCurrentColor(Color c){
         model.setCurrentColor(c);
@@ -108,5 +120,15 @@ public class DrawingController {
         });
         ToggleButton selected = (ToggleButton)toggleGroup.getSelectedToggle();
         selected.getGraphic().setStyle("-fx-fill: "+"'"+c.toString()+"'");
+    }
+
+    public void handleReleased(MouseEvent event) {
+        model.deselect();
+    }
+
+    public void handleDelete(KeyEvent event){
+        if (event.getCode() == KeyCode.DELETE){
+            model.removeSelectedShape();
+        }
     }
 }

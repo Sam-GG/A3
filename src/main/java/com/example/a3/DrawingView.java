@@ -3,6 +3,8 @@ package com.example.a3;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
 public class DrawingView extends StackPane implements DrawingModelSubscriber{
     Canvas myCanvas;
@@ -23,7 +25,7 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
     public void setController(DrawingController controller) {
         myCanvas.setOnMousePressed(controller::handlePressed);
         myCanvas.setOnMouseDragged(controller::handleDrag);
-//        myCanvas.setOnMouseDragReleased(controller::handlePressed);
+        myCanvas.setOnMouseReleased(controller::handleReleased);
     }
 
     public DrawingView(int width, int height){
@@ -52,13 +54,11 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
                 gc.getCanvas().getWidth(),
                 gc.getCanvas().getHeight());
 
-
-
         model.getItems().forEach(item -> {
             switch (item) {
                 case XCircle circle -> this.drawCircle(circle);
                 case XSquare square -> this.drawSquare(square);
-                case XRectangle rect -> this.drawRect(rect);
+                case XRectangle rect -> {this.drawRect(rect);}
                 case XOval oval -> this.drawOval(oval);
                 case XLine line -> this.drawLine(line);
                 default -> throw new IllegalStateException("Unexpected value: " + item);
@@ -66,49 +66,53 @@ public class DrawingView extends StackPane implements DrawingModelSubscriber{
         });
     }
 
-//    double showX1 = 10;
-//    double showY1 = 10;
-//`
-//    public void drawResize(double scaleFactor, double x_coord, double y_coord){
-//        scaleFactor+=1;
-//        showX1 *= scaleFactor;
-//        showY1 *= scaleFactor;
-//
-//        gc.setFill(Color.RED);
-//        gc.fillRect(x_coord,y_coord, showX1,showY1);
-//    }
-//    private void getNormalized
-
     public void drawCircle(XCircle circle) {
 //        double drawCoefficientX = gc.getCanvas().getWidth()/(double)500;
 //        double drawCoefficientY = gc.getCanvas().getHeight()/(double)500;
-//        System.out.println(drawCoefficientX);
+
         gc.setFill(circle.getColor());
         gc.fillOval(circle.x_coord, circle.y_coord, circle.getWidth(), circle.getHeight());
+        if (circle.isSelected){drawBoundaryBox(circle);}
     }
 
 
     public void drawOval(XOval oval) {
         gc.setFill(oval.getColor());
         gc.fillOval(oval.x_coord, oval.y_coord, oval.getWidth(), oval.getHeight());
-
-//        gc.fillOval((double)oval.x_coord/5, (double)oval.y_coord/5, (double)oval.getSize()/5, (double)oval.getHeight()/5);
+        if (oval.isSelected){drawBoundaryBox(oval);}
     }
 
     public void drawSquare(XSquare square) {
         gc.setFill(square.getColor());
         gc.fillRect(square.x_coord, square.y_coord, square.getWidth(), square.getHeight());
+        if (square.isSelected){drawBoundaryBox(square);}
     }
 
     public void drawRect(XRectangle rect) {
         gc.setFill(rect.getColor());
         gc.fillRect(rect.x_coord, rect.y_coord, rect.getWidth(), rect.getHeight());
+        if (rect.isSelected){drawBoundaryBox(rect);}
     }
 
     public void drawLine(XLine line) {
-//        gc.setFill(line.getColor());
+        gc.setLineDashes(0);
         gc.setStroke(line.getColor());
         gc.strokeLine(line.x_coord, line.y_coord, line.getWidth(), line.getHeight());
+    }
+
+    public void drawBoundaryBox(XShape shape){
+        gc.setLineDashes(4d);
+        gc.setStroke(Color.BLACK);
+        gc.strokeLine(shape.x_coord, shape.y_coord, shape.x_coord+shape.getWidth(), shape.y_coord);
+        gc.strokeLine(shape.x_coord, shape.y_coord, shape.x_coord, shape.y_coord+shape.getHeight());
+        gc.strokeLine(shape.x_coord+shape.getWidth(), shape.y_coord, shape.x_coord+shape.getWidth(), shape.y_coord+shape.getHeight());
+        gc.strokeLine(shape.x_coord, shape.y_coord+shape.getHeight(), shape.x_coord+shape.getWidth(), shape.y_coord+shape.getHeight());
+        drawHandle(shape);
+    }
+
+    public void drawHandle(XShape shape){
+        gc.setFill(Color.BLACK);
+        gc.fillOval(shape.x_coord+shape.getWidth()-3, shape.y_coord+shape.getHeight()-3, 12, 12);
     }
 
     public void modelChanged() {
